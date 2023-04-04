@@ -246,6 +246,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                 image: Images.takeaway, index: 1,
                               ) : SizedBox(),
 
+                               restController.restaurant.takeAway ? DeliveryOptionButton(
+                                value: 'take_away', title: 'dinning'.tr, charge: _deliveryCharge, isFree: true,
+                                image: Images.takeaway, index: 2,
+                              ) : SizedBox(),
+
                             ])),
                             SizedBox(height: Dimensions.PADDING_SIZE_LARGE),
 

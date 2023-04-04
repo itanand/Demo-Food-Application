@@ -2,7 +2,7 @@ import 'package:efood_multivendor/data/model/response/language_model.dart';
 import 'package:efood_multivendor/util/images.dart';
 
 class AppConstants {
-  static const String APP_NAME = 'StackFood';
+  static const String APP_NAME = 'BeeBurger';
   static const double APP_VERSION = 6.1;
 
   static const String BASE_URL = 'https://stackfood-admin.6amtech.com';
@@ -125,6 +125,7 @@ class AppConstants {
   /// Delivery Type
   static const String DELIVERY = 'delivery';
   static const String TAKE_AWAY = 'take_away';
+  static const String DINNING = 'dinning';
 
   /// Preference Day
   static List<String> preferenceDays = ['today', 'tomorrow'];

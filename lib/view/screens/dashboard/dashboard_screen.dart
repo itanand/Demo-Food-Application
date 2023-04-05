@@ -49,9 +49,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     _screens = [
       HomeScreen(),
-      FavouriteScreen(),
-      CartScreen(fromNav: true),
       OrderScreen(),
+      CartScreen(fromNav: true),
+      FavouriteScreen(),
       Container(),
     ];
 
@@ -93,17 +93,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
       child: Scaffold(
         key: _scaffoldKey,
 
-        floatingActionButton: GetBuilder<OrderController>(builder: (orderController) {
-            return ResponsiveHelper.isDesktop(context) ? SizedBox() :
-            (orderController.showBottomSheet && orderController.runningOrderList != null && orderController.runningOrderList.isNotEmpty)
-            ? SizedBox.shrink() : FloatingActionButton(
-              elevation: 5,
-              backgroundColor: _pageIndex == 2 ? Theme.of(context).primaryColor : Theme.of(context).cardColor,
-              onPressed: () => _setPage(2),
-              child: CartWidget(color: _pageIndex == 2 ? Theme.of(context).cardColor : Theme.of(context).disabledColor, size: 30),
-            );
-          }
-        ),
+        // floatingActionButton: GetBuilder<OrderController>(builder: (orderController) {
+        //     return ResponsiveHelper.isDesktop(context) ? SizedBox() :
+        //     (orderController.showBottomSheet && orderController.runningOrderList != null && orderController.runningOrderList.isNotEmpty)
+        //     ? SizedBox.shrink() : FloatingActionButton(
+        //       elevation: 5,
+        //       backgroundColor: _pageIndex == 2 ? Theme.of(context).primaryColor : Theme.of(context).cardColor,
+        //       onPressed: () => _setPage(2),
+        //       child: CartWidget(color: _pageIndex == 2 ? Theme.of(context).cardColor : Theme.of(context).disabledColor, size: 30),
+        //     );
+        //   }
+        // ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
         bottomNavigationBar: ResponsiveHelper.isDesktop(context) ? SizedBox() : GetBuilder<OrderController>(builder: (orderController) {
@@ -119,10 +119,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 padding: EdgeInsets.all(Dimensions.PADDING_SIZE_EXTRA_SMALL),
                 child: Row(children: [
                   BottomNavItem(iconData: Icons.home, isSelected: _pageIndex == 0, onTap: () => _setPage(0)),
-                  BottomNavItem(iconData: Icons.favorite, isSelected: _pageIndex == 1, onTap: () => _setPage(1)),
-                  Expanded(child: SizedBox()),
-                  BottomNavItem(iconData: Icons.shopping_bag, isSelected: _pageIndex == 3, onTap: () => _setPage(3)),
-                  BottomNavItem(iconData: Icons.menu, isSelected: _pageIndex == 4, onTap: () {
+                  BottomNavItem(iconData: Icons.shopping_bag, isSelected: _pageIndex == 1, onTap: () => _setPage(1)),
+                  // Expanded(child: SizedBox()),
+                  BottomNavItem(iconData: Icons.shopping_cart, isSelected: _pageIndex == 2, onTap: () => _setPage(2)),
+                  BottomNavItem(iconData: Icons.person, isSelected: _pageIndex == 4, onTap: () {
                     Get.bottomSheet(MenuScreen(), backgroundColor: Colors.transparent, isScrollControlled: true);
                   }),
                 ]),

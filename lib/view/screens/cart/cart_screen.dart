@@ -68,10 +68,10 @@ class _CartScreenState extends State<CartScreen> {
                           ]),
                           SizedBox(height: 10),
 
-                          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                            Text('addons'.tr, style: robotoRegular),
-                            Text('(+) ${PriceConverter.convertPrice(cartController.addOns)}', style: robotoRegular),
-                          ]),
+                          // Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                          //   Text('addons'.tr, style: robotoRegular),
+                          //   Text('(+) ${PriceConverter.convertPrice(cartController.addOns)}', style: robotoRegular),
+                          // ]),
 
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_SMALL),

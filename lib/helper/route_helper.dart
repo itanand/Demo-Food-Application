@@ -138,7 +138,7 @@ class RouteHelper {
     }
     return '$splash?data=$_data&link=$_linkData';
   }
-  static String getLanguageRoute(String page) => '$language?page=$page';
+  // static String getLanguageRoute(String page) => '$language?page=$page';
   static String getOnBoardingRoute() => '$onBoarding';
   static String getSignInRoute(String page) => '$signIn?page=$page';
   static String getSignUpRoute() => '$signUp';
@@ -243,7 +243,7 @@ class RouteHelper {
       }
       return SplashScreen(notificationBody: _data, linkBody: _linkData);
     }),
-    GetPage(name: language, page: () => ChooseLanguageScreen(fromMenu: Get.parameters['page'] == 'menu')),
+    // GetPage(name: language, page: () => ChooseLanguageScreen(fromMenu: Get.parameters['page'] == 'menu')),
     GetPage(name: onBoarding, page: () => OnBoardingScreen()),
     GetPage(name: signIn, page: () => SignInScreen(
       exitFromApp: Get.parameters['page'] == signUp || Get.parameters['page'] == splash || Get.parameters['page'] == onBoarding,
